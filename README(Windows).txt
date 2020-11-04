@@ -28,7 +28,7 @@ Step 5: Setting up our Docker Image. First you need to navigate to the folder in
 change directory command (cd followed by the name of the folder). Keep using this command followed by the directory name until you have accessed the folder with all of the
 ROOT files and keep the powershell open. Before we import the image, make sure Xming is up and running. Now in powershell input this command:
 
-docker run --rm -it -e DISPLAY=172.24.208.1:0 -v ${PWD}:/data -w /data gitlab-registry.cern.ch/scipp/mario-mapyde/pyplotting:master
+docker run --rm -it -e DISPLAY=[IPv4]:0 -v ${PWD}:/data -w /data gitlab-registry.cern.ch/scipp/mario-mapyde/pyplotting:master
 
 and replace the IPV4 with your ip address to export the display to Xming (Save the command once you have your IP address in it, as this will be how you access this docker
 image every time you need to). You can find your ip address by using ipconfig in a powershell window, and it will be listed as IPv4 address. This should start a download 
@@ -61,7 +61,3 @@ should be a file you create with a new file name. This should process a bunch of
 Now you should be all caught up in using powershell and root files, if there's any further questions you can email me at:
 
 zdethlof@ucsc.edu
-
-docker run --rm -it -e DISPLAY=172.24.208.1:0 -v ${PWD}:/data -w /data gitlab-registry.cern.ch/scipp/mario-mapyde/pyplotting:master
-
-https://slugpu.ucsc.edu:8443/user/zdethlof/tree
